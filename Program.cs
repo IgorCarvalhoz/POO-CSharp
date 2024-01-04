@@ -34,3 +34,27 @@ Cpoup1.Creditar(7000);
 Cpoup1.ExibirSaldo();
 Cpoup1.Remover(200);
 Cpoup1.ExibirSaldo();
+
+
+//Treinando Relational pattern usando switchm
+void comparar(int valor){
+    if (valor >10){
+        Console.WriteLine(1);
+    }
+    if (valor < 10){
+       Console.WriteLine(-1);
+    }
+    else{
+       Console.WriteLine(0);
+    }
+}
+comparar(3);
+
+void comparar2(int valor){
+    Console.WriteLine(valor switch{
+        <10 => -1,
+        >10 =>1,
+        _ => 0
+    });
+}
+comparar2(15);
