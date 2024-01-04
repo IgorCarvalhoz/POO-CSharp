@@ -1,0 +1,132 @@
+Orientação Objetos
+
+Abstração em classes - É a capacidade do código abstrair e simular informações do mundo real. Por exemplo: Pessoa
+//O comando "prop" ja cria automaticamnete as propriedade
+public class Pessoa{
+	public string Nome {get; set;}
+	public int Idade {get; set;}
+
+	public void Apresentar (){
+		Console.WriteLine ($"Olá meu nome é {Nome}, tenho {Idade} anos");
+	}
+}
+
+-------------------------------------------------------------------------------------------------------------------
+
+Encapsulamento - Proteje as classes de alterações e visualização externa. Por exemplo: Saldo da conta corrente.
+//O comando ctor ja cria o contrutor automaticamente
+
+public class ContaCorrente {
+	
+	public ContaCorrente (int numeroConta, decimal saldoInicial){
+		NumeroConta = numeroConta;
+		Saldo = saldoInicial;
+	}
+	public int NumeroConta {get; set;}
+	private decimal Saldo;
+	
+	public void Sacar(decimal Valor){
+		if (Valor <= Saldo){
+		Valor -= Saldo;
+	}
+	else{
+		Console.WriteLine("Saldo insuficiente");
+	}	
+
+	public void ExibirSaldo(){
+		Console.WriteLine($"{Saldo}");
+	}
+}
+
+-------------------------------------------------------------------------------------------------------------------
+
+Herança - Quando há duas classes do mesmo tipo porém com alguns atributos diferentes. Por Exemplo: Aluno e Professor, ambos são pessoas porém o aluno tem o atributo nota e o professor o atributo salario
+//A classe pessoa ja está criada, criaremos somente as classes aluno e professor*
+public class Aluno : Pessoa {
+	public int Nota {get; set;}
+}
+public class Professor : Pessoa  {
+	public decimal Salario {get; set;}
+}
+Neste trecho de código ambos recebem os atributos ja criados de pessoa e também recebem os atributos individuais de "nota" e "salario".
+
+-------------------------------------------------------------------------------------------------------------------
+
+Polimorfismo - Utilizado quando herdamos classes porém queremos dar ações diferentes para cada uma. Por Exemplo o metodo apresentar das classes alunos e professor.
+
+//Para o polimorfismo funcionar é necessário adicionar a plavara virtual no metodo que vai ser alterado, no caso o metodo apresentar, na classe pessoa.
+public virtual void Apresentar(){
+	Console.WriteLine ($"Olá meu nome é {Nome}, tenho {Idade} anos");
+}
+//Posteriormente devemos adicionar a plavra Override para sobrescrever o metodo dentro da classe filha, no caso a classe aluno e professor
+public class Aluno : Pessoa {
+	public int Nota {get; set;}
+
+	public override void Apresentar(){
+		Console.WriteLine ($"Olá meu nome é {Nome}, tenho {Idade} anos e sou Aluno de nota {Nota}");
+	}
+}
+
+public class Professor : Pessoa {
+	public decimal Salario {get; set;}
+
+	public override void Apresentar(){
+		Console.WriteLine ($"Olá meu nome é {Nome}, tenho {Idade} anos e sou Professor com o salário {Salario}");
+	}
+}
+
+-------------------------------------------------------------------------------------------------------------------
+
+Classe Abstrata- Modelo que serve apenas para ser herdada, impossivel ser instanciada. Por Exemplo: Conta Bancaria que pode ser tanto uma conta corrente quanto uma conta poupança por exemplo.
+
+//Declarando a classe abstrata conta:
+public abstract class Conta {
+	protected decimal Saldo;
+	public abstract void Creditar(decimal Valor);
+	public void ExibirSaldo(){
+		Console.WriteLine($"Seu saldo é de: {Saldo}")
+	}
+}
+
+//Declarando a classe filha:
+public class Poupanca : Conta {
+	public override void Creditar (decimal Valor){
+		Saldo += Valor;
+	}
+}
+
+Devemos instanciar o metodo abstrato creditar na classe filha para que funcione no program. Após isso é possivel criar uma nova classe no program através da classe Poupanca onde teremos todas as funcionalidades da classe pai e da classe filha. Exemplo: 
+
+Poupanca poup1 = new Poupanca();
+poup1.Creditar(7000);
+poup1.ExibirSaldo();
+poup1.Remover(200);
+poup1.ExibirSaldo();
+
+-------------------------------------------------------------------------------------------------------------------
+
+Construtor por herança - Quando queremos deixar algum atributo abrigatório para alguma classe devemos utilizar construtores. Exemplo:
+
+public class Pessoa {
+	public Pessoa (string nome){
+		Nome = nome;
+	}
+	public string Nome {get; set;}
+	public int Idade {get; set;}
+	public string Email {get; set;}
+}
+//Agora toda classe que herda de pessoa deverá declarar o atributo nome entre parenteses, porém devem ser feitas algumas alterações no código das classes filha. Exemplo:
+
+public class Aluno : Pessoa {
+	public Aluno (string nome) : base(nome) {
+	
+	}
+}
+//Toda vez que for declarado um aluno deverá ser declarado o nome deste aluno entre parenteses. Exemplo do código no program:
+
+Pessoa p1 = new Pessoa ("Igor");
+Aluno a1 = new Aluno ("Carlos");
+
+-------------------------------------------------------------------------------------------------------------------
+
+
