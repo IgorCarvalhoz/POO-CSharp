@@ -1,4 +1,6 @@
 ﻿using OrientacaoObjetos.Models;
+using POOCSharp.Models;
+
 //Abstração e classes
 Pessoa p1 = new Pessoa();
 p1.Nome = "Igor";
@@ -25,3 +27,10 @@ prof1.Salario = 20000;
 // Polimorfismo
 a1.Apresentar();
 prof1.Apresentar();
+
+// Classe abstrata
+Poupanca Cpoup1 = new Poupanca();
+Cpoup1.Creditar(7000);
+Cpoup1.ExibirSaldo();
+Cpoup1.Remover(200);
+Cpoup1.ExibirSaldo();
