@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\Poo-CSharp\\OrientacaoObjetos.csproj": {}
+    "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\POO-CSharp\\OrientacaoObjetos.csproj": {}
   },
   "projects": {
-    "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\Poo-CSharp\\OrientacaoObjetos.csproj": {
+    "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\POO-CSharp\\OrientacaoObjetos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\Poo-CSharp\\OrientacaoObjetos.csproj",
+        "projectUniqueName": "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\POO-CSharp\\OrientacaoObjetos.csproj",
         "projectName": "OrientacaoObjetos",
-        "projectPath": "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\Poo-CSharp\\OrientacaoObjetos.csproj",
+        "projectPath": "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\POO-CSharp\\OrientacaoObjetos.csproj",
         "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\Poo-CSharp\\obj\\",
+        "outputPath": "D:\\OrientacaoObjetos.NET\\OrientacaoObjetos\\POO-CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config"
