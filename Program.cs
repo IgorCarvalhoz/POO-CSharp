@@ -1,5 +1,6 @@
 ﻿using OrientacaoObjetos.Models;
 using POOCSharp.Models;
+using POOCSharp.Interfaces;
 
 //Abstração e classes
 Pessoa p1 = new Pessoa();
@@ -58,3 +59,8 @@ void comparar2(int valor){
     });
 }
 comparar2(15);
+
+//Interface não precisa ser implementada
+ICalculadora calculadora = new Calculadora();
+int calc1 = calculadora.Multiplicar(3 , 10);
+Console.WriteLine(calc1);
